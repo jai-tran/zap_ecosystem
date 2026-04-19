@@ -71,15 +71,23 @@ jobs:
 
     # 3. Deploy API Gateway
     - name: Deploy API Gateway
-      shell: pwsh
+      shell: bash
       run: |
-        ./gen.ps1
-        $configPrefix = "crm-api-config"
-        $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
-        $configName = "$configPrefix-$timestamp"
+        pwsh ./gen.ps1
+        configPrefix="crm-api-config"
+        timestamp=$(date +"%Y%m%d-%H%M%S")
+        configName="$configPrefix-$timestamp"
         
-        Write-Host "Creating new API config: $configName"
-        gcloud api-gateway api-configs create $configName --api=crm-api-v1 --openapi-spec=openapi.yaml --backend-auth-service-account=${{ secrets.GCP_SERVICE_ACCOUNT }} --project=${{ env.PROJECT_ID }}
+        echo "Creating new API config: $configName"
+        gcloud api-gateway api-configs create $configName \
+          --api=crm-api-v1 \
+          --openapi-spec=openapi.yaml \
+          --backend-auth-service-account="${{ secrets.GCP_SERVICE_ACCOUNT }}" \
+          --project="${{ env.PROJECT_ID }}"
         
-        Write-Host "Updating gateway to use: $configName"
-        gcloud api-gateway gateways update zap-ecosystem-gateway --api=crm-api-v1 --api-config=$configName --location=us-central1 --project=${{ env.PROJECT_ID }}
+        echo "Updating gateway to use: $configName"
+        gcloud api-gateway gateways update zap-ecosystem-gateway \
+          --api=crm-api-v1 \
+          --api-config=$configName \
+          --location=us-central1 \
+          --project="${{ env.PROJECT_ID }}"
