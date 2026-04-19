@@ -1,0 +1,66 @@
+name: Deploy ZAP Ecosystem to GCP
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: 'read'
+  id-token: 'write'
+
+env:
+  PROJECT_ID: zapcrm-492101
+  REGION: us-central1
+  REPOSITORY: zap-repo # Tên Artifact Registry của bạn
+
+jobs:
+  deploy:
+    name: Build and Deploy Services
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+
+    - id: 'auth'
+      name: 'Authenticate to Google Cloud'
+      uses: 'google-github-actions/auth@v2'
+      with:
+        workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+        service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v2'
+
+    - name: 'Configure Docker for GCP'
+      run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev
+
+    # 1. Build & Deploy CRM Service
+    - name: Build and Push CRM Image
+      run: |
+        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/crm-api:${{ github.sha }} -f Dockerfile.CRM .
+        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/crm-api:${{ github.sha }}
+
+    - name: Deploy CRM to Cloud Run
+      run: |
+        gcloud run deploy crm-api \
+          --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/crm-api:${{ github.sha }} \
+          --region ${{ env.REGION }} \
+          --platform managed \
+          --allow-unauthenticated \
+          --quiet
+
+    # 2. Build & Deploy Identity Service
+    - name: Build and Push Identity Image
+      run: |
+        docker build -t ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/identity-api:${{ github.sha }} -f Dockerfile.Identity .
+        docker push ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/identity-api:${{ github.sha }}
+
+    - name: Deploy Identity to Cloud Run
+      run: |
+        gcloud run deploy identity-api \
+          --image ${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/identity-api:${{ github.sha }} \
+          --region ${{ env.REGION }} \
+          --platform managed \
+          --allow-unauthenticated \
+          --quiet
