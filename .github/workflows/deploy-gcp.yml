@@ -82,7 +82,7 @@ jobs:
         gcloud api-gateway api-configs create $configName \
           --api=crm-api-v1 \
           --openapi-spec=openapi.yaml \
-          --backend-auth-service-account="${{ secrets.GCP_SERVICE_ACCOUNT }}" \
+          --backend-auth-service-account="204573236312-compute@developer.gserviceaccount.com" \
           --project="${{ env.PROJECT_ID }}"
         
         echo "Updating gateway to use: $configName"
