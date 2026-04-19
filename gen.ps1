@@ -25,7 +25,7 @@ $yaml += "      operationId: loginAuth
 "
 $yaml += "      x-google-backend:
 "
-$yaml += "        address: https://identity-api-6r5doqgaaa-as.a.run.app/api/v1/auth/login
+$yaml += "        address: https://identity-api-204573236312.asia-southeast1.run.app/api/v1/auth/login
 "
 $yaml += "      responses:
 "
@@ -50,7 +50,7 @@ foreach ($r in $routes) {
 "
         $yaml += "      x-google-backend:
 "
-        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}/list
+        $yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app${p}/list
 "
         $yaml += "      responses: { '200': { description: 'OK' } }
 "
@@ -63,7 +63,7 @@ foreach ($r in $routes) {
 "
         $yaml += "      x-google-backend:
 "
-        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}
+        $yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app${p}
 "
         $yaml += "      responses: { '200': { description: 'OK' } }
 "
@@ -73,7 +73,7 @@ foreach ($r in $routes) {
 "
         $yaml += "      x-google-backend:
 "
-        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}
+        $yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app${p}
 "
         $yaml += "      responses: { '200': { description: 'OK' } }
 "
@@ -96,7 +96,7 @@ foreach ($r in $routes) {
 "
         $yaml += "      x-google-backend:
 "
-        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}/{id}
+        $yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app${p}/{id}
 "
         $yaml += "      responses: { '200': { description: 'OK' } }
 "
@@ -116,7 +116,7 @@ foreach ($r in $routes) {
 "
         $yaml += "      x-google-backend:
 "
-        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}/{id}
+        $yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app${p}/{id}
 "
         $yaml += "      responses: { '200': { description: 'OK' } }
 "
@@ -136,7 +136,7 @@ foreach ($r in $routes) {
 "
         $yaml += "      x-google-backend:
 "
-        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}/{id}
+        $yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app${p}/{id}
 "
         $yaml += "      responses: { '200': { description: 'OK' } }
 "
@@ -152,7 +152,7 @@ $yaml += "      operationId: get_dictionaries_entities
 "
 $yaml += "      x-google-backend:
 "
-$yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app/api/v1/system/dictionaries/entities
+$yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/entities
 "
 $yaml += "      responses: { '200': { description: 'OK' } }
 "
