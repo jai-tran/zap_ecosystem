@@ -1,0 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using ZAP.Ecosystem.Domain.CRM;
+
+namespace ZAP.Ecosystem.Infrastructure.Data.Configurations.Inventory;
+
+public class InventoryItemConfiguration : IEntityTypeConfiguration<InventoryItem>
+{
+    public void Configure(EntityTypeBuilder<InventoryItem> builder)
+    {
+        builder.Metadata.SetSchema("logistics");
+        // builder.HasKey(x => x.id); // Disabled due to ID naming variance
+    }
+}

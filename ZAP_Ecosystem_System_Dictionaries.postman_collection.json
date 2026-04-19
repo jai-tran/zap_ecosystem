@@ -1,0 +1,51 @@
+{
+  "info": {
+    "_postman_id": "f5d7cf12-fef5-4b0d-b2a8-12cd2a6def11",
+    "name": "ZAP Ecosystem - System Dictionaries",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Entities",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"page\": 1,\n    \"page_size\": 50,\n    \"keyword\": \"\",\n    \"schema_name\": \"system\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{gateway}}/api/v1/system/dictionaries/entities/list",
+          "host": [
+            "{{gateway}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "system",
+            "dictionaries",
+            "entities",
+            "list"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "gateway",
+      "value": "http://localhost:5120"
+    }
+  ]
+}

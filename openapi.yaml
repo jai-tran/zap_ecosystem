@@ -1,0 +1,751 @@
+swagger: '2.0'
+info:
+  title: CRM Gateway Config
+  description: API Gateway mapping for CRM API
+  version: 1.0.0
+schemes:
+  - https
+paths:
+  /api/v1/auth/login:
+    post:
+      summary: "Login Customer/Employee"
+      operationId: loginAuth
+      x-google-backend:
+        address: https://zap-identity-service-204573236312.asia-southeast1.run.app/api/v1/auth/login
+      responses:
+        '200':
+          description: A successful response
+
+  /api/promotions/list:
+    post:
+      operationId: list_promotions
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/promotions/list
+      responses: { '200': { description: OK } }
+  /api/promotions:
+    get:
+      operationId: get_promotions
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/promotions
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_promotions
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/promotions
+      responses: { '200': { description: OK } }
+  /api/promotions/{id}:
+    get:
+      operationId: get_id_promotions
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/promotions/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_promotions
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/promotions/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_promotions
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/promotions/{id}
+      responses: { '200': { description: OK } }
+
+  /api/collections/list:
+    post:
+      operationId: list_collections
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/collections/list
+      responses: { '200': { description: OK } }
+  /api/collections:
+    get:
+      operationId: get_collections
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/collections
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_collections
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/collections
+      responses: { '200': { description: OK } }
+  /api/collections/{id}:
+    get:
+      operationId: get_id_collections
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/collections/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_collections
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/collections/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_collections
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/collections/{id}
+      responses: { '200': { description: OK } }
+
+  /api/locations/list:
+    post:
+      operationId: list_locations
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/locations/list
+      responses: { '200': { description: OK } }
+  /api/locations/provinces:
+    get:
+      operationId: get_locations_provinces
+      parameters: [{ name: locale_id, in: query, required: false, type: integer }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/locations/provinces
+      responses: { '200': { description: OK } }
+  /api/locations:
+    get:
+      operationId: get_locations
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/locations
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_locations
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/locations
+      responses: { '200': { description: OK } }
+  /api/locations/{id}:
+    get:
+      operationId: get_id_locations
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/locations/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_locations
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/locations/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_locations
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/locations/{id}
+      responses: { '200': { description: OK } }
+
+  /api/categories/list:
+    post:
+      operationId: list_categories
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/categories/list
+      responses: { '200': { description: OK } }
+  /api/categories:
+    get:
+      operationId: get_categories
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/categories
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_categories
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/categories
+      responses: { '200': { description: OK } }
+  /api/categories/{id}:
+    get:
+      operationId: get_id_categories
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/categories/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_categories
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/categories/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_categories
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/categories/{id}
+      responses: { '200': { description: OK } }
+
+  /api/customers/list:
+    post:
+      operationId: list_customers
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customers/list
+      responses: { '200': { description: OK } }
+  /api/customers:
+    get:
+      operationId: get_customers
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customers
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_customers
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customers
+      responses: { '200': { description: OK } }
+  /api/customers/{id}:
+    get:
+      operationId: get_id_customers
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customers/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_customers
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customers/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_customers
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customers/{id}
+      responses: { '200': { description: OK } }
+
+  /api/customergroups/list:
+    post:
+      operationId: list_customergroups
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customergroups/list
+      responses: { '200': { description: OK } }
+  /api/customergroups:
+    get:
+      operationId: get_customergroups
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customergroups
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_customergroups
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customergroups
+      responses: { '200': { description: OK } }
+  /api/customergroups/{id}:
+    get:
+      operationId: get_id_customergroups
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customergroups/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_customergroups
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customergroups/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_customergroups
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/customergroups/{id}
+      responses: { '200': { description: OK } }
+
+  /api/v1/catalog/menus/list:
+    post:
+      operationId: list_menus
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/menus/list
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/menus:
+    get:
+      operationId: get_menus
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/menus
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_menus
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/menus
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/menus/{id}:
+    get:
+      operationId: get_id_menus
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/menus/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_menus
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/menus/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_menus
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/menus/{id}
+      responses: { '200': { description: OK } }
+
+  /api/diningoptions/list:
+    post:
+      operationId: list_diningoptions
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/diningoptions/list
+      responses: { '200': { description: OK } }
+  /api/diningoptions:
+    get:
+      operationId: get_diningoptions
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/diningoptions
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_diningoptions
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/diningoptions
+      responses: { '200': { description: OK } }
+  /api/diningoptions/{id}:
+    get:
+      operationId: get_id_diningoptions
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/diningoptions/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_diningoptions
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/diningoptions/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_diningoptions
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/diningoptions/{id}
+      responses: { '200': { description: OK } }
+
+  /api/brands/list:
+    post:
+      operationId: list_brands
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/brands/list
+      responses: { '200': { description: OK } }
+  /api/brands:
+    get:
+      operationId: get_brands
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/brands
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_brands
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/brands
+      responses: { '200': { description: OK } }
+  /api/brands/{id}:
+    get:
+      operationId: get_id_brands
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/brands/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_brands
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/brands/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_brands
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/brands/{id}
+      responses: { '200': { description: OK } }
+
+  /api/v1/catalog/products/list:
+    post:
+      operationId: list_products
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/products/list
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/products:
+    get:
+      operationId: get_products
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/products
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_products
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/products
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/products/{id}:
+    get:
+      operationId: get_id_products
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/products/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_products
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/products/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_products
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/products/{id}
+      responses: { '200': { description: OK } }
+
+  /api/v1/catalog/modifiergroups/list:
+    post:
+      operationId: list_modifiergroups
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifiergroups/list
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/modifiergroups:
+    get:
+      operationId: get_modifiergroups
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifiergroups
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_modifiergroups
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifiergroups
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/modifiergroups/{id}:
+    get:
+      operationId: get_id_modifiergroups
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifiergroups/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_modifiergroups
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifiergroups/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_modifiergroups
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifiergroups/{id}
+      responses: { '200': { description: OK } }
+
+  /api/paymenttypes/list:
+    post:
+      operationId: list_paymenttypes
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymenttypes/list
+      responses: { '200': { description: OK } }
+  /api/paymenttypes:
+    get:
+      operationId: get_paymenttypes
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymenttypes
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_paymenttypes
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymenttypes
+      responses: { '200': { description: OK } }
+  /api/paymenttypes/{id}:
+    get:
+      operationId: get_id_paymenttypes
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymenttypes/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_paymenttypes
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymenttypes/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_paymenttypes
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymenttypes/{id}
+      responses: { '200': { description: OK } }
+
+  /api/paymentterms/list:
+    post:
+      operationId: list_paymentterms
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymentterms/list
+      responses: { '200': { description: OK } }
+  /api/paymentterms:
+    get:
+      operationId: get_paymentterms
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymentterms
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_paymentterms
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymentterms
+      responses: { '200': { description: OK } }
+  /api/paymentterms/{id}:
+    get:
+      operationId: get_id_paymentterms
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymentterms/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_id_paymentterms
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymentterms/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_id_paymentterms
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/paymentterms/{id}
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/modifieritems/list:
+    post:
+      operationId: list_modifieritems
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifieritems/list
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/geocountries/list:
+    post:
+      operationId: list_geocountries
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/geocountries/list
+      responses: { '200': { description: OK } }
+
+  /api/v1/system/dictionaries/entities:
+    get:
+      operationId: get_dictionaries_entities
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/entities
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_dictionaries_entities
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/entities
+      responses: { '200': { description: OK } }
+
+  /api/v1/system/dictionaries/entities/{schema}/{table}:
+    get:
+      operationId: get_dictionary_entity_schema_table
+      parameters: 
+        - name: schema
+          in: path
+          required: true
+          type: string
+        - name: table
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/entities/{schema}/{table}
+      responses: { '200': { description: OK } }
+
+  /api/v1/system/dictionaries/fields:
+    post:
+      operationId: post_dictionaries_fields
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/fields
+      responses: { '200': { description: OK } }
+
+  /api/v1/system/dictionaries/fields/{id}:
+    put:
+      operationId: put_dictionary_field
+      parameters: 
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/fields/{id}
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/modifier_groups/list:
+    post:
+      operationId: post_modifier_groups_list
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups/list
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/modifier_groups:
+    get:
+      operationId: get_modifier_groups
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_modifier_groups
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/modifier_groups/{id}:
+    get:
+      operationId: get_modifier_groups_id
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_modifier_groups_id
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_modifier_groups_id
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups/{id}
+      responses: { '200': { description: OK } }
+
+  /api/v1/catalog/modifier_items/list:
+    post:
+      operationId: post_modifier_items_list
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items/list
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/modifier_items:
+    get:
+      operationId: get_modifier_items
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_modifier_items
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/modifier_items/{id}:
+    get:
+      operationId: get_modifier_items_id
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items/{id}
+      responses: { '200': { description: OK } }
+    put:
+      operationId: put_modifier_items_id
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items/{id}
+      responses: { '200': { description: OK } }
+    delete:
+      operationId: del_modifier_items_id
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items/{id}
+      responses: { '200': { description: OK } }
+
+  /api/v1/catalog/units/list:
+    post:
+      operationId: post_units_list
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/units/list
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/units:
+    get:
+      operationId: get_units
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/units
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_units
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/units
+      responses: { '200': { description: OK } }
+  /api/v1/catalog/units/{id}:
+    get:
+      operationId: get_units_id
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/catalog/units/{id}
+      responses: { '200': { description: OK } }
+
+  /api/v1/crm/customers/list:
+    post:
+      operationId: post_customers_list
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/crm/customers/list
+      responses: { '200': { description: OK } }
+  /api/v1/crm/customers:
+    get:
+      operationId: get_customers_v1
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/crm/customers
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_customers_v1
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/crm/customers
+      responses: { '200': { description: OK } }
+  /api/v1/crm/customers/{id}:
+    get:
+      operationId: get_customers_v1_id
+      parameters: [{ name: id, in: path, required: true, type: string }]
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/crm/customers/{id}
+      responses: { '200': { description: OK } }
+
+  /api/v1/crm/promotions/list:
+    post:
+      operationId: post_promotions_list
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/crm/promotions/list
+      responses: { '200': { description: OK } }
+  /api/v1/crm/promotions:
+    get:
+      operationId: get_promotions_v1
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/crm/promotions
+      responses: { '200': { description: OK } }
+
+  /api/v1/finance/payments:
+    get:
+      operationId: get_finance_payments
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/finance/payments
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_finance_payments
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/finance/payments
+      responses: { '200': { description: OK } }
+
+  /api/v1/sales/reports:
+    get:
+      operationId: get_sales_reports
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/sales/reports
+      responses: { '200': { description: OK } }
+
+  /api/v1/sales/dining_options:
+    get:
+      operationId: get_sales_dining_options
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/sales/dining_options
+      responses: { '200': { description: OK } }
+
+  /api/v1/sales/orders/list:
+    post:
+      operationId: post_sales_orders_list
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/sales/orders/list
+      responses: { '200': { description: OK } }
+  /api/v1/sales/orders:
+    get:
+      operationId: get_sales_orders
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/sales/orders
+      responses: { '200': { description: OK } }
+
+  /api/v1/sales/products:
+    get:
+      operationId: get_sales_products
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/sales/products
+      responses: { '200': { description: OK } }
+    post:
+      operationId: post_sales_products
+      x-google-backend:
+        address: https://zap-crm-service-204573236312.asia-southeast1.run.app/api/v1/sales/products
+      responses: { '200': { description: OK } }
