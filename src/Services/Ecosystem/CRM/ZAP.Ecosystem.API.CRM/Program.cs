@@ -120,10 +120,17 @@ app.UseSharedAcceptLanguage();
 
 app.MapControllers();
 
-using (var scope = app.Services.CreateScope())
+try 
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<EcosystemDbContext>();
-    dbContext.Database.EnsureCreated();
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<EcosystemDbContext>();
+        dbContext.Database.EnsureCreated();
+    }
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"[Warning] Could not connect to database on startup: {ex.Message}");
 }
 
 app.Run();
