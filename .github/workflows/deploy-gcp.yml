@@ -15,8 +15,8 @@ permissions:
 
 env:
   PROJECT_ID: zapcrm-492101
-  REGION: us-central1
-  REPOSITORY: zap-repo # Tên Artifact Registry của bạn
+  REGION: asia-southeast1
+  REPOSITORY: crm-repo
 
 jobs:
   deploy:
