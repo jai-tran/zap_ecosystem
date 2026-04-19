@@ -9,6 +9,7 @@ namespace ZAP.Ecosystem.API.CRM.Features.Brands.v1.Controllers;
 
 [ApiController]
 [Route("api/v1/catalog/brands")]
+[Route("api/brands")]
 public class BrandsController : ControllerBase
 {
     private readonly IMediator _mediator;

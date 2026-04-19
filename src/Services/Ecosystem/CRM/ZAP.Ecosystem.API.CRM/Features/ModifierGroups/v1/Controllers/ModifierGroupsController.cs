@@ -9,6 +9,8 @@ namespace ZAP.Ecosystem.API.CRM.Features.ModifierGroups.v1.Controllers;
 
 [ApiController]
 [Route("api/v1/catalog/modifier_groups")]
+[Route("api/modifiergroups")]
+[Route("api/modifier_groups")]
 public class ModifierGroupsController : ControllerBase
 {
     private readonly IMediator _mediator;

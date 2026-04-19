@@ -8,6 +8,7 @@ namespace ZAP.Ecosystem.API.CRM.Features.ModifierItem.v1.Controllers;
 
 [ApiController]
 [Route("api/v1/catalog/modifier_items")]
+[Route("api/modifier_items")]
 public class ModifierItemsController : ControllerBase
 {
     private readonly IMediator _mediator;

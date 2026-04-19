@@ -1,156 +1,161 @@
-﻿ = ""
- += "swagger: '2.0'
+$yaml = ""
+$yaml += "swagger: '2.0'
 "
- += "info:
+$yaml += "info:
 "
- += "  title: CRM Gateway Config
+$yaml += "  title: CRM Gateway Config
 "
- += "  description: API Gateway mapping for CRM API
+$yaml += "  description: API Gateway mapping for CRM API
 "
- += "  version: 1.0.0
+$yaml += "  version: 1.0.0
 "
- += "schemes:
+$yaml += "schemes:
 "
- += "  - https
+$yaml += "  - https
 "
- += "paths:
+$yaml += "paths:
 "
- += "  /api/v1/auth/login:
+$yaml += "  /api/v1/auth/login:
 "
- += "    post:
+$yaml += "    post:
 "
- += "      summary: Login Customer/Employee
+$yaml += "      summary: Login Customer/Employee
 "
- += "      operationId: loginAuth
+$yaml += "      operationId: loginAuth
 "
- += "      x-google-backend:
+$yaml += "      x-google-backend:
 "
- += "        address: https://identity-api-768989935757.us-central1.run.app/api/v1/auth/login
+$yaml += "        address: https://identity-api-6r5doqgaaa-as.a.run.app/api/v1/auth/login
 "
- += "      responses:
+$yaml += "      responses:
 "
- += "        '200':
+$yaml += "        '200':
 "
- += "          description: OK
+$yaml += "          description: OK
 "
 
- = @('promotions', 'collections', 'locations', 'categories', 'customers', 'customergroups', 'menus', 'diningoptions', 'brands', 'products', 'modifiergroups', 'paymenttypes', 'paymentterms')
+$routes = @('promotions', 'collections', 'locations', 'categories', 'customers', 'customergroups', 'menus', 'diningoptions', 'brands', 'products', 'modifiergroups', 'paymenttypes', 'paymentterms')
 
 foreach ($r in $routes) {
-     += "  /api/$r/list:
+    $prefixes = @("/api/$r", "/api/v1/catalog/$r", "/api/v1/crm/$r")
+    
+    foreach ($p in $prefixes) {
+        $opId = $p.Replace("/", "_").Replace("-", "_")
+        
+        $yaml += "  ${p}/list:
 "
-     += "    post:
+        $yaml += "    post:
 "
-     += "      operationId: list_$r
+        $yaml += "      operationId: list$opId
 "
-     += "      x-google-backend:
+        $yaml += "      x-google-backend:
 "
-     += "        address: https://crm-api-768989935757.us-central1.run.app/api/$r/list
+        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}/list
 "
-     += "      responses: { '200': { description: 'OK' } }
-"
-
-     += "  /api/$r:
-"
-     += "    get:
-"
-     += "      operationId: get_$r
-"
-     += "      x-google-backend:
-"
-     += "        address: https://crm-api-768989935757.us-central1.run.app/api/$r
-"
-     += "      responses: { '200': { description: 'OK' } }
-"
-     += "    post:
-"
-     += "      operationId: post_$r
-"
-     += "      x-google-backend:
-"
-     += "        address: https://crm-api-768989935757.us-central1.run.app/api/$r
-"
-     += "      responses: { '200': { description: 'OK' } }
-"
-     += "    put:
-"
-     += "      operationId: put_$r
-"
-     += "      x-google-backend:
-"
-     += "        address: https://crm-api-768989935757.us-central1.run.app/api/$r
-"
-     += "      responses: { '200': { description: 'OK' } }
+        $yaml += "      responses: { '200': { description: 'OK' } }
 "
 
-     += "  /api/$r/{id}:
+        $yaml += "  ${p}:
 "
-     += "    get:
+        $yaml += "    get:
 "
-     += "      operationId: get_id_$r
+        $yaml += "      operationId: get$opId
 "
-     += "      parameters:
+        $yaml += "      x-google-backend:
 "
-     += "        - name: id
+        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}
 "
-     += "          in: path
+        $yaml += "      responses: { '200': { description: 'OK' } }
 "
-     += "          required: true
+        $yaml += "    post:
 "
-     += "          type: string
+        $yaml += "      operationId: post$opId
 "
-     += "      x-google-backend:
+        $yaml += "      x-google-backend:
 "
-     += "        address: https://crm-api-768989935757.us-central1.run.app/api/$r/{id}
+        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}
 "
-     += "        path_translation: APPEND_PATH_TO_ADDRESS
+        $yaml += "      responses: { '200': { description: 'OK' } }
 "
-     += "      responses: { '200': { description: 'OK' } }
+
+        $yaml += "  ${p}/{id}:
 "
-     += "    put:
+        $yaml += "    get:
 "
-     += "      operationId: put_id_$r
+        $yaml += "      operationId: get_id$opId
 "
-     += "      parameters:
+        $yaml += "      parameters:
 "
-     += "        - name: id
+        $yaml += "        - name: id
 "
-     += "          in: path
+        $yaml += "          in: path
 "
-     += "          required: true
+        $yaml += "          required: true
 "
-     += "          type: string
+        $yaml += "          type: string
 "
-     += "      x-google-backend:
+        $yaml += "      x-google-backend:
 "
-     += "        address: https://crm-api-768989935757.us-central1.run.app/api/$r/{id}
+        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}/{id}
 "
-     += "        path_translation: APPEND_PATH_TO_ADDRESS
+        $yaml += "      responses: { '200': { description: 'OK' } }
 "
-     += "      responses: { '200': { description: 'OK' } }
+        $yaml += "    put:
 "
-     += "    delete:
+        $yaml += "      operationId: put_id$opId
 "
-     += "      operationId: delete_id_$r
+        $yaml += "      parameters:
 "
-     += "      parameters:
+        $yaml += "        - name: id
 "
-     += "        - name: id
+        $yaml += "          in: path
 "
-     += "          in: path
+        $yaml += "          required: true
 "
-     += "          required: true
+        $yaml += "          type: string
 "
-     += "          type: string
+        $yaml += "      x-google-backend:
 "
-     += "      x-google-backend:
+        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}/{id}
 "
-     += "        address: https://crm-api-768989935757.us-central1.run.app/api/$r/{id}
+        $yaml += "      responses: { '200': { description: 'OK' } }
 "
-     += "        path_translation: APPEND_PATH_TO_ADDRESS
+        $yaml += "    delete:
 "
-     += "      responses: { '200': { description: 'OK' } }
+        $yaml += "      operationId: delete_id$opId
 "
+        $yaml += "      parameters:
+"
+        $yaml += "        - name: id
+"
+        $yaml += "          in: path
+"
+        $yaml += "          required: true
+"
+        $yaml += "          type: string
+"
+        $yaml += "      x-google-backend:
+"
+        $yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app${p}/{id}
+"
+        $yaml += "      responses: { '200': { description: 'OK' } }
+"
+    }
 }
 
+# Add system dictionaries
+$yaml += "  /api/v1/system/dictionaries/entities:
+"
+$yaml += "    get:
+"
+$yaml += "      operationId: get_dictionaries_entities
+"
+$yaml += "      x-google-backend:
+"
+$yaml += "        address: https://crm-api-6r5doqgaaa-as.a.run.app/api/v1/system/dictionaries/entities
+"
+$yaml += "      responses: { '200': { description: 'OK' } }
+"
+
 Out-File openapi.yaml -InputObject $yaml -Encoding UTF8
+

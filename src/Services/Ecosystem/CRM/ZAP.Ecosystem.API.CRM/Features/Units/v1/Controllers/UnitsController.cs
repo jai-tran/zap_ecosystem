@@ -9,6 +9,7 @@ namespace ZAP.Ecosystem.API.CRM.Features.Units.v1.Controllers;
 
 [ApiController]
 [Route("api/v1/catalog/units")]
+[Route("api/units")]
 public class UnitsController : ControllerBase
 {
     private readonly IMediator _mediator;

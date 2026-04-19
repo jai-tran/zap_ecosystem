@@ -10,6 +10,7 @@ namespace ZAP.Ecosystem.API.CRM.Features.Categories.v1.Controllers;
 
 [ApiController]
 [Route("api/v1/catalog/categories")]
+[Route("api/categories")]
 public class CategoriesController : ControllerBase
 {
     private readonly IMediator _mediator;

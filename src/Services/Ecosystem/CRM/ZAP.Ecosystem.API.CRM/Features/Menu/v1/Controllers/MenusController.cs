@@ -10,6 +10,7 @@ namespace ZAP.Ecosystem.API.CRM.Features.Menu.v1.Controllers;
 
 [ApiController]
 [Route("api/v1/catalog/menus")]
+[Route("api/menus")]
 public class MenusController : ControllerBase
 {
     private readonly IMediator _mediator;
