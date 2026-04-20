@@ -12,10 +12,12 @@ namespace ZAP.Ecosystem.Application.CRM.Features.GeoCountry.v1.Queries
     public class GetGeoCountryListQueryHandler : IRequestHandler<GetGeoCountryListQuery, object>
     {
         private readonly IGeoCountryRepository _repository;
+        private readonly ICurrentUserService _currentUserService;
 
-        public GetGeoCountryListQueryHandler(IGeoCountryRepository repository)
+        public GetGeoCountryListQueryHandler(IGeoCountryRepository repository, ICurrentUserService currentUserService)
         {
             _repository = repository;
+            _currentUserService = currentUserService;
         }
 
         public async Task<object> Handle(GetGeoCountryListQuery request, CancellationToken cancellationToken)
@@ -30,10 +32,12 @@ namespace ZAP.Ecosystem.Application.CRM.Features.GeoCountry.v1.Queries
                 req.Sort?.Field ?? "id",
                 req.Sort?.Descending ?? false);
 
+            var localeId = _currentUserService.LocaleId;
+
             var dtos = items.Select(x => new GeoCountryDto
             {
                 id            = x.id,
-                name          = x.Translations?.FirstOrDefault()?.name,
+                name          = x.Translations?.FirstOrDefault(t => t.locale_id == localeId)?.name ?? string.Empty,
                 serial_id     = x.serial_id,
                 serial_number = x.serial_number,
                 iso_alpha2    = x.iso_alpha2,

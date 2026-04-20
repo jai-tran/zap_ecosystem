@@ -38,7 +38,7 @@ public class GetCollectionByIdQueryHandler : IRequestHandler<GetCollectionByIdQu
             banner_url = collection.banner_url,
             status_id = collection.status_id,
             status_code = collection.status?.code,
-            status_name = collection.status?.translations?.FirstOrDefault()?.name ?? collection.status?.code,
+            status_name = collection.status?.translations?.FirstOrDefault(t => t.locale_id == _currentUserService.LocaleId)?.name ?? collection.status?.code,
             sort_order = collection.sort_order,
             created_at = collection.created_at,
             updated_at = collection.updated_at,
