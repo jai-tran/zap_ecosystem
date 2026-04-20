@@ -24,8 +24,11 @@ public class GetLocationListQueryHandler : IRequestHandler<GetLocationListQuery,
 
         int localeId = req.locale_id > 0 ? req.locale_id : _currentUserService.LocaleId > 0 ? _currentUserService.LocaleId : 2;
 
+        var tenantId = Guid.TryParse(_currentUserService.TenantId, out var tid) ? tid : (Guid?)null;
+
         var filter = new LocationListFilter
         {
+            TenantId        = tenantId,
             PageIndex       = req.page_index,
             PageSize        = req.page_size,
             Search          = req.search,

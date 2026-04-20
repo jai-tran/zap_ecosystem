@@ -20,9 +20,10 @@ public class GetLocationByIdQueryHandler : IRequestHandler<GetLocationByIdQuery,
     public async Task<object> Handle(GetLocationByIdQuery request, CancellationToken cancellationToken)
     {
         int localeId = _currentUserService.LocaleId > 0 ? _currentUserService.LocaleId : 2;
+        var tenantId = System.Guid.TryParse(_currentUserService.TenantId, out var tid) ? tid : (System.Guid?)null;
 
         var x = await _repository.GetByIdAsync(request.Id);
-        if (x == null) return CrmResponse.NotFound("Location");
+        if (x == null || x.tenant_id != tenantId) return CrmResponse.NotFound("Location");
 
         return CrmResponse.Ok(new LocationDto
         {
