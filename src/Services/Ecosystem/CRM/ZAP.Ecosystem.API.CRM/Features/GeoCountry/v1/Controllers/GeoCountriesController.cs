@@ -9,6 +9,7 @@ namespace ZAP.Ecosystem.API.CRM.Features.GeoCountry.v1.Controllers;
 
 [ApiController]
 [Route("api/v1/crm/geo_countries")]
+[Route("api/v1/catalog/geo_countries")]
 [Route("api/geo_countries")]
 public class GeoCountriesController : ControllerBase
 {
