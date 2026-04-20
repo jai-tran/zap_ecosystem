@@ -1,18 +1,25 @@
 using System;
 using System.Collections.Generic;
+using ZAP.Ecosystem.Application.CRM.Common;
 
-namespace ZAP.Ecosystem.Application.CRM.Features.Collections.v1.DTOs
+namespace ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.DTOs
 {
     public class CollectionDto
     {
         public Guid id { get; set; }
         public int? serial_id { get; set; }
+        public Guid? tenant_id { get; set; }
         public string name { get; set; } = string.Empty;
-        public string? image_url { get; set; }
-        public int product_count { get; set; }
+        public string slug { get; set; } = string.Empty;
+        public string? description_html { get; set; }
+        public string? banner_url { get; set; }
         public int status_id { get; set; }
         public string? status_code { get; set; }
         public string? status_name { get; set; }
+        public int sort_order { get; set; }
+        public DateTime created_at { get; set; }
+        public DateTime? updated_at { get; set; }
+        public List<CollectionItemDto> items { get; set; } = new();
     }
 
     public class CollectionItemDto
@@ -22,12 +29,30 @@ namespace ZAP.Ecosystem.Application.CRM.Features.Collections.v1.DTOs
         public int sort_order { get; set; }
     }
 
-    public class CollectionListRequestDto
+    public class CollectionListRequestDto : BaseListRequestDto<object, object>
     {
-        public int page_index { get; set; } = 1;
-        public int page_size { get; set; } = 10;
-        public string? search { get; set; }
+    }
+
+    public class CreateCollectionRequestDto
+    {
+        public string name { get; set; } = string.Empty;
+        public string slug { get; set; } = string.Empty;
+        public string? description_html { get; set; }
+        public string? banner_url { get; set; }
+        public int sort_order { get; set; }
+        public int status_id { get; set; } = 1;
+        public List<CollectionItemDto> items { get; set; } = new();
+    }
+
+    public class UpdateCollectionRequestDto
+    {
+        public string name { get; set; } = string.Empty;
+        public string slug { get; set; } = string.Empty;
+        public string? description_html { get; set; }
+        public string? banner_url { get; set; }
+        public int sort_order { get; set; }
+        public int status_id { get; set; } = 1;
+        public List<CollectionItemDto> items { get; set; } = new();
     }
 }
-
 
