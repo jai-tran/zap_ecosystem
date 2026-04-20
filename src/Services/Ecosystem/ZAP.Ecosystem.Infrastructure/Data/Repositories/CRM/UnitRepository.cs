@@ -13,15 +13,23 @@ namespace ZAP.Ecosystem.Infrastructure.Data.Repositories.CRM
         public UnitRepository(EcosystemDbContext context) => _context = context;
 
         public async Task<IEnumerable<UomItem>> GetAllAsync(Guid? tenantId = null) => await _context.UomItems.Where(x => tenantId == null).ToListAsync();
-        public async Task<UomItem?> GetByIdAsync(int id) => await _context.UomItems.Include(x => x.translations).FirstOrDefaultAsync(u => u.id == id);
+        public async Task<UomItem?> GetByIdAsync(int id) => await _context.UomItems.Include(x => x.translations).Include(x => x.status).ThenInclude(s => s!.translations).FirstOrDefaultAsync(u => u.id == id);
         public async Task CreateAsync(UomItem uomItem) { _context.UomItems.Add(uomItem); await _context.SaveChangesAsync(); }
         public async Task UpdateAsync(UomItem uomItem) { _context.UomItems.Update(uomItem); await _context.SaveChangesAsync(); }
         public async Task DeleteAsync(int id) { var u = await _context.UomItems.FindAsync(id); if (u != null) { _context.UomItems.Remove(u); await _context.SaveChangesAsync(); } }
 
+        public async Task<IEnumerable<StatusItem>> GetStatusesAsync()
+        {
+            return await _context.StatusItems.Include(x => x.translations).ToListAsync();
+        }
         public async Task<(IEnumerable<UomItem> Items, int Total)> GetPagedAsync(
             int page, int pageSize, Guid? tenantId = null, string? search = null, int? statusId = null, int? precision = null, string sortField = "name", bool sortDescending = false)
         {
-            var q = _context.UomItems.Include(x => x.translations).AsQueryable();
+            var q = _context.UomItems
+                .Include(x => x.translations)
+                .Include(x => x.status)
+                .ThenInclude(s => s!.translations)
+                .AsQueryable();
 
             if (!string.IsNullOrEmpty(search)) 
             {
@@ -40,8 +48,7 @@ namespace ZAP.Ecosystem.Infrastructure.Data.Repositories.CRM
             
             if (statusId.HasValue) 
             {
-                bool isActive = statusId.Value == 1;
-                q = q.Where(x => x.is_active == isActive);
+                q = q.Where(x => x.status_id == statusId.Value);
             }
 
             var normalizedSortField = sortField?.ToLower() ?? "name";

@@ -21,6 +21,7 @@ namespace ZAP.Ecosystem.Domain.CRM
         Task CreateAsync(UomItem uomItem);
         Task UpdateAsync(UomItem uomItem);
         Task DeleteAsync(int id);
+        Task<IEnumerable<StatusItem>> GetStatusesAsync();
     }
 }
 

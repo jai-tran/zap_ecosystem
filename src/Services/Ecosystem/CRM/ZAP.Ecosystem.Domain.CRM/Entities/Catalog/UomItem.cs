@@ -52,6 +52,12 @@ namespace ZAP.Ecosystem.Domain.CRM
         [Column("is_active")]
         public bool is_active { get; set; } = true;
 
+        [Column("status_id")]
+        public int? status_id { get; set; }
+
+        [ForeignKey("status_id")]
+        public StatusItem? status { get; set; }
+
         [Column("created_at")]
         public DateTime? created_at { get; set; }
 

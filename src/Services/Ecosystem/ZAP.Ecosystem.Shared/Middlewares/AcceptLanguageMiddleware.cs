@@ -15,8 +15,8 @@ namespace ZAP.Ecosystem.Shared.Middlewares
 
         public async Task InvokeAsync(HttpContext context)
         {
-            // Default locale_id for Vietnamese is 2
-            int localeId = 2; 
+            // Default locale_id for Vietnamese is 1
+            int localeId = 1; 
 
             if (context.Request.Headers.TryGetValue("Accept-Language", out var langValues))
             {
@@ -31,8 +31,8 @@ namespace ZAP.Ecosystem.Shared.Middlewares
                 {
                     // If it is string-based ISO code
                     var firstLang = lang.Split(',')[0].Trim().ToLower();
-                    if (firstLang.StartsWith("en")) localeId = 1;
-                    else if (firstLang.StartsWith("vi")) localeId = 2;
+                    if (firstLang.StartsWith("en")) localeId = 2;
+                    else if (firstLang.StartsWith("vi")) localeId = 1;
                 }
             }
 

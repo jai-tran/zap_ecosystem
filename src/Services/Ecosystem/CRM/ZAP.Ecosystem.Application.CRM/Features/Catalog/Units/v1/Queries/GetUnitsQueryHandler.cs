@@ -39,11 +39,11 @@ public class GetUnitsQueryHandler : IRequestHandler<GetUnitsQuery, object>
             tenant_id = null,
             code = x.code ?? string.Empty,
             name = x.translations?.FirstOrDefault(t => t.locale_id == localeId)?.name ?? x.name ?? string.Empty,
-            abbreviation = x.abbreviation,
+            symbol = x.abbreviation,
             precision = x.precision,
-            status_id = x.is_active ? 1 : 0,
-            status_code = x.is_active ? "ACTIVE" : "INACTIVE",
-            status_name = x.is_active ? "Active" : "Inactive",
+            status_id = x.status_id,
+            status_code = x.status?.code,
+            status_name = x.status?.translations?.FirstOrDefault(t => t.locale_id == localeId)?.name ?? x.status?.code,
             is_active = x.is_active
         }).ToList();
 

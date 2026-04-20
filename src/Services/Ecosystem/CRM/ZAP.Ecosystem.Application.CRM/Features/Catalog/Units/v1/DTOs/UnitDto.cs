@@ -8,7 +8,7 @@ namespace ZAP.Ecosystem.Application.CRM.Features.Units.v1.DTOs
         public Guid? tenant_id { get; set; }
         public string code { get; set; } = string.Empty;
         public string name { get; set; } = string.Empty;
-        public string? abbreviation { get; set; }
+        public string? symbol { get; set; }
         public int precision { get; set; }
         public int? status_id { get; set; }
         public string? status_code { get; set; }
