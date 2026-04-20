@@ -144,15 +144,91 @@ foreach ($r in $routes) {
 }
 
 # Add system dictionaries
+$yaml += "  /api/v1/system/dictionaries/entities/list:
+"
+$yaml += "    post:
+"
+$yaml += "      operationId: list_dictionaries_entities
+"
+$yaml += "      x-google-backend:
+"
+$yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/entities/list
+"
+$yaml += "      responses: { '200': { description: 'OK' } }
+"
 $yaml += "  /api/v1/system/dictionaries/entities:
 "
-$yaml += "    get:
+$yaml += "    post:
 "
-$yaml += "      operationId: get_dictionaries_entities
+$yaml += "      operationId: create_dictionaries_entities
 "
 $yaml += "      x-google-backend:
 "
 $yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/entities
+"
+$yaml += "      responses: { '200': { description: 'OK' } }
+"
+$yaml += "  /api/v1/system/dictionaries/entities/{schema}/{table}:
+"
+$yaml += "    get:
+"
+$yaml += "      operationId: get_dictionaries_entities_by_schema_table
+"
+$yaml += "      parameters:
+"
+$yaml += "        - name: schema
+"
+$yaml += "          in: path
+"
+$yaml += "          required: true
+"
+$yaml += "          type: string
+"
+$yaml += "        - name: table
+"
+$yaml += "          in: path
+"
+$yaml += "          required: true
+"
+$yaml += "          type: string
+"
+$yaml += "      x-google-backend:
+"
+$yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/entities/{schema}/{table}
+"
+$yaml += "      responses: { '200': { description: 'OK' } }
+"
+$yaml += "  /api/v1/system/dictionaries/fields:
+"
+$yaml += "    post:
+"
+$yaml += "      operationId: create_dictionaries_fields
+"
+$yaml += "      x-google-backend:
+"
+$yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/fields
+"
+$yaml += "      responses: { '200': { description: 'OK' } }
+"
+$yaml += "  /api/v1/system/dictionaries/fields/{id}:
+"
+$yaml += "    put:
+"
+$yaml += "      operationId: update_dictionaries_fields
+"
+$yaml += "      parameters:
+"
+$yaml += "        - name: id
+"
+$yaml += "          in: path
+"
+$yaml += "          required: true
+"
+$yaml += "          type: string
+"
+$yaml += "      x-google-backend:
+"
+$yaml += "        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/system/dictionaries/fields/{id}
 "
 $yaml += "      responses: { '200': { description: 'OK' } }
 "
