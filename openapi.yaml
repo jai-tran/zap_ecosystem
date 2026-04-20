@@ -1,4 +1,4 @@
-swagger: '2.0'
+﻿swagger: '2.0'
 info:
   title: CRM Gateway Config
   description: API Gateway mapping for CRM API
@@ -1599,6 +1599,294 @@ paths:
       x-google-backend:
         address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifiergroups/{id}
       responses: { '200': { description: 'OK' } }
+  /api/modifier_groups/list:
+    post:
+      operationId: list_api_modifier_groups
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_groups/list
+      responses: { '200': { description: 'OK' } }
+  /api/modifier_groups:
+    get:
+      operationId: get_api_modifier_groups
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_groups
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_modifier_groups
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_groups
+      responses: { '200': { description: 'OK' } }
+  /api/modifier_groups/{id}:
+    get:
+      operationId: get_id_api_modifier_groups
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_groups/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_modifier_groups
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_groups/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_modifier_groups
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_groups/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/modifier_groups/list:
+    post:
+      operationId: list_api_v1_catalog_modifier_groups
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups/list
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/modifier_groups:
+    get:
+      operationId: get_api_v1_catalog_modifier_groups
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_v1_catalog_modifier_groups
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/modifier_groups/{id}:
+    get:
+      operationId: get_id_api_v1_catalog_modifier_groups
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_v1_catalog_modifier_groups
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_v1_catalog_modifier_groups
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_groups/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/modifier_groups/list:
+    post:
+      operationId: list_api_v1_crm_modifier_groups
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_groups/list
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/modifier_groups:
+    get:
+      operationId: get_api_v1_crm_modifier_groups
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_groups
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_v1_crm_modifier_groups
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_groups
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/modifier_groups/{id}:
+    get:
+      operationId: get_id_api_v1_crm_modifier_groups
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_groups/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_v1_crm_modifier_groups
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_groups/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_v1_crm_modifier_groups
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_groups/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/modifier_items/list:
+    post:
+      operationId: list_api_modifier_items
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_items/list
+      responses: { '200': { description: 'OK' } }
+  /api/modifier_items:
+    get:
+      operationId: get_api_modifier_items
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_items
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_modifier_items
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_items
+      responses: { '200': { description: 'OK' } }
+  /api/modifier_items/{id}:
+    get:
+      operationId: get_id_api_modifier_items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_items/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_modifier_items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_items/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_modifier_items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/modifier_items/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/modifier_items/list:
+    post:
+      operationId: list_api_v1_catalog_modifier_items
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items/list
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/modifier_items:
+    get:
+      operationId: get_api_v1_catalog_modifier_items
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_v1_catalog_modifier_items
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/modifier_items/{id}:
+    get:
+      operationId: get_id_api_v1_catalog_modifier_items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_v1_catalog_modifier_items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_v1_catalog_modifier_items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/modifier_items/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/modifier_items/list:
+    post:
+      operationId: list_api_v1_crm_modifier_items
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_items/list
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/modifier_items:
+    get:
+      operationId: get_api_v1_crm_modifier_items
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_items
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_v1_crm_modifier_items
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_items
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/modifier_items/{id}:
+    get:
+      operationId: get_id_api_v1_crm_modifier_items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_items/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_v1_crm_modifier_items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_items/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_v1_crm_modifier_items
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/modifier_items/{id}
+      responses: { '200': { description: 'OK' } }
   /api/paymenttypes/list:
     post:
       operationId: list_api_paymenttypes
@@ -1886,6 +2174,294 @@ paths:
           type: string
       x-google-backend:
         address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/paymentterms/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/units/list:
+    post:
+      operationId: list_api_units
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/units/list
+      responses: { '200': { description: 'OK' } }
+  /api/units:
+    get:
+      operationId: get_api_units
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/units
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_units
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/units
+      responses: { '200': { description: 'OK' } }
+  /api/units/{id}:
+    get:
+      operationId: get_id_api_units
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/units/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_units
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/units/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_units
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/units/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/units/list:
+    post:
+      operationId: list_api_v1_catalog_units
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/units/list
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/units:
+    get:
+      operationId: get_api_v1_catalog_units
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/units
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_v1_catalog_units
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/units
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/units/{id}:
+    get:
+      operationId: get_id_api_v1_catalog_units
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/units/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_v1_catalog_units
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/units/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_v1_catalog_units
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/units/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/units/list:
+    post:
+      operationId: list_api_v1_crm_units
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/units/list
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/units:
+    get:
+      operationId: get_api_v1_crm_units
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/units
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_v1_crm_units
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/units
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/units/{id}:
+    get:
+      operationId: get_id_api_v1_crm_units
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/units/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_v1_crm_units
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/units/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_v1_crm_units
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/units/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/geo_countries/list:
+    post:
+      operationId: list_api_geo_countries
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/geo_countries/list
+      responses: { '200': { description: 'OK' } }
+  /api/geo_countries:
+    get:
+      operationId: get_api_geo_countries
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/geo_countries
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_geo_countries
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/geo_countries
+      responses: { '200': { description: 'OK' } }
+  /api/geo_countries/{id}:
+    get:
+      operationId: get_id_api_geo_countries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/geo_countries/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_geo_countries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/geo_countries/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_geo_countries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/geo_countries/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/geo_countries/list:
+    post:
+      operationId: list_api_v1_catalog_geo_countries
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/geo_countries/list
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/geo_countries:
+    get:
+      operationId: get_api_v1_catalog_geo_countries
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/geo_countries
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_v1_catalog_geo_countries
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/geo_countries
+      responses: { '200': { description: 'OK' } }
+  /api/v1/catalog/geo_countries/{id}:
+    get:
+      operationId: get_id_api_v1_catalog_geo_countries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/geo_countries/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_v1_catalog_geo_countries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/geo_countries/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_v1_catalog_geo_countries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/catalog/geo_countries/{id}
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/geo_countries/list:
+    post:
+      operationId: list_api_v1_crm_geo_countries
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/geo_countries/list
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/geo_countries:
+    get:
+      operationId: get_api_v1_crm_geo_countries
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/geo_countries
+      responses: { '200': { description: 'OK' } }
+    post:
+      operationId: post_api_v1_crm_geo_countries
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/geo_countries
+      responses: { '200': { description: 'OK' } }
+  /api/v1/crm/geo_countries/{id}:
+    get:
+      operationId: get_id_api_v1_crm_geo_countries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/geo_countries/{id}
+      responses: { '200': { description: 'OK' } }
+    put:
+      operationId: put_id_api_v1_crm_geo_countries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/geo_countries/{id}
+      responses: { '200': { description: 'OK' } }
+    delete:
+      operationId: delete_id_api_v1_crm_geo_countries
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      x-google-backend:
+        address: https://crm-api-204573236312.asia-southeast1.run.app/api/v1/crm/geo_countries/{id}
       responses: { '200': { description: 'OK' } }
   /api/v1/system/dictionaries/entities:
     get:

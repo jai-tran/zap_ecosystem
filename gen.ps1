@@ -34,7 +34,7 @@ $yaml += "        '200':
 $yaml += "          description: OK
 "
 
-$routes = @('promotions', 'collections', 'locations', 'categories', 'customers', 'customergroups', 'menus', 'diningoptions', 'brands', 'products', 'modifiergroups', 'paymenttypes', 'paymentterms')
+$routes = @('promotions', 'collections', 'locations', 'categories', 'customers', 'customergroups', 'menus', 'diningoptions', 'brands', 'products', 'modifiergroups', 'modifier_groups', 'modifier_items', 'paymenttypes', 'paymentterms', 'units', 'geo_countries')
 
 foreach ($r in $routes) {
     $prefixes = @("/api/$r", "/api/v1/catalog/$r", "/api/v1/crm/$r")
