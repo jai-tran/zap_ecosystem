@@ -4,6 +4,11 @@
             "key": "gateway",
             "type": "string",
             "value": "http://localhost:5120"
+        },
+        {
+            "key": "lang_code",
+            "value": "vi",
+            "type": "string"
         }
     ],
     "info": {
@@ -59,6 +64,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -153,6 +164,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -247,6 +264,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -336,6 +359,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "method": "POST",
@@ -425,7 +454,15 @@
                                                                 },
                                                                 "method": "GET",
                                                                 "body": {},
-                                                                "auth": null
+                                                                "auth": null,
+                                                                "header": [
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
+                                                                    }
+                                                                ]
                                                             },
                                                             "response": [
                                                                 {
@@ -497,6 +534,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -620,6 +663,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -733,7 +782,15 @@
                                                                 },
                                                                 "method": "GET",
                                                                 "body": {},
-                                                                "auth": null
+                                                                "auth": null,
+                                                                "header": [
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
+                                                                    }
+                                                                ]
                                                             },
                                                             "response": [
                                                                 {
@@ -825,6 +882,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "PUT",
@@ -935,6 +998,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "method": "POST",
@@ -1042,6 +1111,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -1152,6 +1227,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -1262,6 +1343,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -1361,6 +1448,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "method": "POST",
@@ -1473,6 +1566,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "PUT",
@@ -1591,7 +1690,15 @@
                                                                 },
                                                                 "method": "DELETE",
                                                                 "body": {},
-                                                                "auth": null
+                                                                "auth": null,
+                                                                "header": [
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
+                                                                    }
+                                                                ]
                                                             },
                                                             "response": [
                                                                 {
@@ -1684,6 +1791,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -1774,6 +1887,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -1822,7 +1941,15 @@
                                                                     "value": ""
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -1833,6 +1960,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -1867,6 +2000,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -1921,7 +2060,15 @@
                                                                     "value": ""
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -1938,6 +2085,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -1986,7 +2139,15 @@
                                                                     "value": ""
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -1997,6 +2158,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2030,6 +2197,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2084,7 +2257,15 @@
                                                                     "value": "1"
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -2101,6 +2282,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2144,7 +2331,15 @@
                                                                     "value": ""
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -2155,6 +2350,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2183,6 +2384,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2232,7 +2439,15 @@
                                                                     "value": ""
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -2249,6 +2464,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2292,7 +2513,15 @@
                                                                     "value": ""
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -2303,6 +2532,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2331,6 +2566,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2380,7 +2621,15 @@
                                                                     "value": ""
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -2397,6 +2646,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2440,7 +2695,15 @@
                                                                     "value": ""
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {
@@ -2451,6 +2714,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2479,6 +2748,12 @@
                                                             {
                                                                 "key": "Content-Type",
                                                                 "value": "application/json"
+                                                            },
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
                                                             }
                                                         ],
                                                         "body": {
@@ -2528,7 +2803,15 @@
                                                                     "value": ""
                                                                 }
                                                             ]
-                                                        }
+                                                        },
+                                                        "header": [
+                                                            {
+                                                                "key": "Accept-Language",
+                                                                "value": "{{lang_code}}",
+                                                                "type": "text",
+                                                                "description": "vi | en | 1 | 2"
+                                                            }
+                                                        ]
                                                     }
                                                 }
                                             ]
@@ -2576,6 +2859,12 @@
                                                                             {
                                                                                 "key": "Content-Type",
                                                                                 "value": "application/json"
+                                                                            },
+                                                                            {
+                                                                                "key": "Accept-Language",
+                                                                                "value": "{{lang_code}}",
+                                                                                "type": "text",
+                                                                                "description": "vi | en | 1 | 2"
                                                                             }
                                                                         ],
                                                                         "method": "POST",
@@ -2706,7 +2995,15 @@
                                                                                 },
                                                                                 "method": "GET",
                                                                                 "body": {},
-                                                                                "auth": null
+                                                                                "auth": null,
+                                                                                "header": [
+                                                                                    {
+                                                                                        "key": "Accept-Language",
+                                                                                        "value": "{{lang_code}}",
+                                                                                        "type": "text",
+                                                                                        "description": "vi | en | 1 | 2"
+                                                                                    }
+                                                                                ]
                                                                             },
                                                                             "response": [
                                                                                 {
@@ -2803,6 +3100,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -2907,6 +3210,12 @@
                                                                     {
                                                                         "key": "Content-Type",
                                                                         "value": "application/json"
+                                                                    },
+                                                                    {
+                                                                        "key": "Accept-Language",
+                                                                        "value": "{{lang_code}}",
+                                                                        "type": "text",
+                                                                        "description": "vi | en | 1 | 2"
                                                                     }
                                                                 ],
                                                                 "method": "POST",
@@ -3021,6 +3330,12 @@
                                                                             {
                                                                                 "key": "Content-Type",
                                                                                 "value": "application/json"
+                                                                            },
+                                                                            {
+                                                                                "key": "Accept-Language",
+                                                                                "value": "{{lang_code}}",
+                                                                                "type": "text",
+                                                                                "description": "vi | en | 1 | 2"
                                                                             }
                                                                         ],
                                                                         "method": "PUT",
