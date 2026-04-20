@@ -53,8 +53,9 @@ public class GetCollectionListQueryHandler : IRequestHandler<GetCollectionListQu
             items = c.items?.OrderBy(i => i.sort_order).Select(i => new CollectionItemDto
             {
                 product_id = i.product_id,
-                product_name = i.product?.name,
-                sort_order = i.sort_order
+                product_name = i.product?.translations?.FirstOrDefault(t => t.locale_id == localeId)?.name ?? i.product?.name,
+                sort_order = i.sort_order,
+                debug_product_null = i.product == null
             }).ToList() ?? new()
         }).ToList();
 

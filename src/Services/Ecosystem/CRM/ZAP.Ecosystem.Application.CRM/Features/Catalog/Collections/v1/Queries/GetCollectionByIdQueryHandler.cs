@@ -8,7 +8,7 @@ using ZAP.Ecosystem.Domain.CRM;
 
 namespace ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.Queries;
 
-public class GetCollectionByIdQueryHandler : IRequestHandler<GetCollectionByIdQuery, object>
+public class GetCollectionByIdQueryHandler : IRequestHandler<GetCollectionByIdQuery, CollectionDto>
 {
     private readonly ICollectionRepository _repository;
     private readonly ICurrentUserService _currentUserService;
@@ -19,13 +19,13 @@ public class GetCollectionByIdQueryHandler : IRequestHandler<GetCollectionByIdQu
         _currentUserService = currentUserService;
     }
 
-    public async Task<object> Handle(GetCollectionByIdQuery request, CancellationToken cancellationToken)
+    public async Task<CollectionDto> Handle(GetCollectionByIdQuery request, CancellationToken cancellationToken)
     {
         var tenantId = Guid.TryParse(_currentUserService.TenantId, out var tid) ? tid : (Guid?)null;
         var collection = await _repository.GetByIdAsync(request.Id);
 
         if (collection == null || collection.tenant_id != tenantId)
-            return CrmResponse.NotFound("Collection");
+            return null;
 
         var dto = new CollectionDto
         {
@@ -45,11 +45,11 @@ public class GetCollectionByIdQueryHandler : IRequestHandler<GetCollectionByIdQu
             items = collection.items?.OrderBy(i => i.sort_order).Select(i => new CollectionItemDto
             {
                 product_id = i.product_id,
-                product_name = i.product?.name,
+                product_name = i.product?.translations?.FirstOrDefault(t => t.locale_id == _currentUserService.LocaleId)?.name ?? i.product?.name,
                 sort_order = i.sort_order
             }).ToList() ?? new()
         };
 
-        return CrmResponse.Ok(dto);
+        return dto;
     }
 }

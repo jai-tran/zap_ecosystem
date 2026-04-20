@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ZAP.Ecosystem.Domain.CRM
 {
-        public class ProductEntity : BaseEntity, ILocalizable<ProductTranslation>
+        public class ProductEntity : BaseEntity
     {
                 public override string? UserGuid { get; set; }
 
@@ -28,8 +28,6 @@ namespace ZAP.Ecosystem.Domain.CRM
                 public int Visible { get; set; } = 1;
 
                 public bool IsActive => Visible == 1;
-        
-        public ICollection<ProductTranslation> Translations { get; set; } = new List<ProductTranslation>();
     }
 }
 

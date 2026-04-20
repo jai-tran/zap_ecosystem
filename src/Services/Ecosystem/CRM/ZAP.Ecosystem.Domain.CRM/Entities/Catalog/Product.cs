@@ -39,7 +39,7 @@ namespace ZAP.Ecosystem.Domain.CRM
         public string? status_name { get; set; }
         public ICollection<ProductVariant> variants { get; set; } = new List<ProductVariant>();
         public ICollection<ProductCategoryMap> category_mappings { get; set; } = new List<ProductCategoryMap>();
+        
+        public ICollection<ProductTranslation> translations { get; set; } = new List<ProductTranslation>();
     }
 }
-
-

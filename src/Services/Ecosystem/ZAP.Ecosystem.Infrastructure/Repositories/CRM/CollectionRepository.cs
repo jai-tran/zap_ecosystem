@@ -23,6 +23,7 @@ namespace ZAP.Ecosystem.Infrastructure.Repositories.CRM
                 .ThenInclude(s => s.translations)
                 .Include(x => x.items)
                 .ThenInclude(i => i.product)
+                .ThenInclude(p => p.translations)
                 .AsNoTracking();
 
             if (tenantId.HasValue)
@@ -103,6 +104,7 @@ namespace ZAP.Ecosystem.Infrastructure.Repositories.CRM
                 .ThenInclude(s => s.translations)
                 .Include(x => x.items)
                 .ThenInclude(i => i.product)
+                .ThenInclude(p => p.translations)
                 .FirstOrDefaultAsync(x => x.id == id);
         }
 

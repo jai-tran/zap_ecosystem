@@ -27,6 +27,7 @@ namespace ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.DTOs
         public Guid product_id { get; set; }
         public string? product_name { get; set; }
         public int sort_order { get; set; }
+        public bool debug_product_null { get; set; }
     }
 
     public class CollectionFilterDto

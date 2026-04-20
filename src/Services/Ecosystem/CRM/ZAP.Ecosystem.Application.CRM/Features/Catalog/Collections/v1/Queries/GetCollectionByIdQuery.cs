@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using System;
 using ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.DTOs;
 
