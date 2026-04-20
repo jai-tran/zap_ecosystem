@@ -21,6 +21,8 @@ namespace ZAP.Ecosystem.Infrastructure.Repositories.CRM
             var query = _dbContext.Set<Collection>()
                 .Include(x => x.status)
                 .ThenInclude(s => s.translations)
+                .Include(x => x.items)
+                .ThenInclude(i => i.product)
                 .AsNoTracking();
 
             if (tenantId.HasValue)
@@ -92,6 +94,16 @@ namespace ZAP.Ecosystem.Infrastructure.Repositories.CRM
         public async Task RemoveItemsAsync(Guid collectionId, IEnumerable<Guid> productIds)
         {
             await Task.CompletedTask;
+        }
+
+        public new async Task<Collection?> GetByIdAsync(Guid id)
+        {
+            return await _dbSet
+                .Include(x => x.status)
+                .ThenInclude(s => s.translations)
+                .Include(x => x.items)
+                .ThenInclude(i => i.product)
+                .FirstOrDefaultAsync(x => x.id == id);
         }
 
         Task<Collection?> ICollectionRepository.GetByIdAsync(Guid id) => GetByIdAsync(id);

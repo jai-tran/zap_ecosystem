@@ -42,9 +42,10 @@ public class GetCollectionByIdQueryHandler : IRequestHandler<GetCollectionByIdQu
             sort_order = collection.sort_order,
             created_at = collection.created_at,
             updated_at = collection.updated_at,
-            items = collection.items?.Select(i => new CollectionItemDto
+            items = collection.items?.OrderBy(i => i.sort_order).Select(i => new CollectionItemDto
             {
                 product_id = i.product_id,
+                product_name = i.product?.name,
                 sort_order = i.sort_order
             }).ToList() ?? new()
         };

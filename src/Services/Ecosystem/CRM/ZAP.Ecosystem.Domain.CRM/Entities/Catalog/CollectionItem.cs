@@ -18,6 +18,9 @@ namespace ZAP.Ecosystem.Domain.CRM
 
         [ForeignKey("collection_id")]
         public Collection? collection { get; set; }
+
+        [ForeignKey("product_id")]
+        public Product? product { get; set; }
     }
 }
 
