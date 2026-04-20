@@ -80,7 +80,7 @@ public class GetProductListQueryHandler : IRequestHandler<GetProductListQuery, o
                 product_id = p.id,
                 name = p.name,
                 tenant_id = p.tenant_id,
-                product_type_id = p.product_type_id,
+                product_type_id = p.product_type_id ?? 1,
                 product_type_text = p.product_type?.translations?.FirstOrDefault(t => t.locale_id == localeId)?.name ?? p.product_type?.code ?? "",
                 status_id = p.status_id,
                 status_name = statusText,

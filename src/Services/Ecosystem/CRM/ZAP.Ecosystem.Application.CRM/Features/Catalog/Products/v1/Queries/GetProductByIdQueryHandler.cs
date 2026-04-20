@@ -61,7 +61,7 @@ public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, o
             name = product.name,
             tenant_id = product.tenant_id,
             brand_id = product.brand_id,
-            product_type_id = product.product_type_id,
+            product_type_id = product.product_type_id ?? 1,
             product_type_text = product.product_type?.translations?.FirstOrDefault(t => t.locale_id == localeId)?.name ?? product.product_type?.code ?? "",
             status_id = product.status_id,
             status_name = product.status?.translations?.FirstOrDefault(t => t.locale_id == localeId)?.name ?? product.status?.code ?? "",
