@@ -15,20 +15,45 @@ namespace ZAP.Ecosystem.Infrastructure.Repositories.CRM
         {
         }
 
-        public async Task<(IEnumerable<Collection> Items, int TotalCount)> GetPagedAsync(int page, int pageSize, string? search = null)
+        public async Task<(IEnumerable<Collection> Items, int TotalCount)> GetPagedAsync(
+            int page, int pageSize, Guid? tenantId = null, string? search = null, int? statusId = null, string sortField = "created_at", bool sortDescending = true)
         {
             var query = _dbContext.Set<Collection>()
                 .Include(x => x.status)
                 .ThenInclude(s => s.translations)
                 .AsNoTracking();
 
+            if (tenantId.HasValue)
+                query = query.Where(x => x.tenant_id == tenantId.Value);
+
             if (!string.IsNullOrWhiteSpace(search))
-                query = query.Where(x => x.name.Contains(search));
+            {
+                var lowerSearch = search.ToLower();
+                query = query.Where(x => 
+                    (x.name != null && x.name.ToLower().Contains(lowerSearch)) ||
+                    (x.slug != null && x.slug.ToLower().Contains(lowerSearch))
+                );
+            }
+
+            if (statusId.HasValue)
+                query = query.Where(x => x.status_id == statusId.Value);
+
+            var normalizedSortField = sortField?.ToLower() ?? "created_at";
+            query = normalizedSortField switch
+            {
+                "id" => sortDescending ? query.OrderByDescending(x => x.id) : query.OrderBy(x => x.id),
+                "name" => sortDescending ? query.OrderByDescending(x => x.name) : query.OrderBy(x => x.name),
+                "slug" => sortDescending ? query.OrderByDescending(x => x.slug) : query.OrderBy(x => x.slug),
+                "sort_order" => sortDescending ? query.OrderByDescending(x => x.sort_order) : query.OrderBy(x => x.sort_order),
+                "status_id" => sortDescending ? query.OrderByDescending(x => x.status_id) : query.OrderBy(x => x.status_id),
+                "created_at" => sortDescending ? query.OrderByDescending(x => x.created_at) : query.OrderBy(x => x.created_at),
+                "updated_at" => sortDescending ? query.OrderByDescending(x => x.updated_at) : query.OrderBy(x => x.updated_at),
+                _ => sortDescending ? query.OrderByDescending(x => x.created_at) : query.OrderBy(x => x.created_at)
+            };
 
             var totalCount = await query.CountAsync();
 
             var items = await query
-                .OrderBy(x => x.name)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();

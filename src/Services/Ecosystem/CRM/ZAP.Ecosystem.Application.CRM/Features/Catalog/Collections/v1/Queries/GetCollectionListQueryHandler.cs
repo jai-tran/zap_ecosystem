@@ -1,8 +1,10 @@
 using MediatR;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.DTOs;
+using ZAP.Ecosystem.Application.CRM.Interfaces;
 using ZAP.Ecosystem.Domain.CRM;
 
 namespace ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.Queries;
@@ -10,18 +12,27 @@ namespace ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.Queries;
 public class GetCollectionListQueryHandler : IRequestHandler<GetCollectionListQuery, object>
 {
     private readonly ICollectionRepository _repository;
+    private readonly ICurrentUserService _currentUserService;
 
-    public GetCollectionListQueryHandler(ICollectionRepository repository)
+    public GetCollectionListQueryHandler(ICollectionRepository repository, ICurrentUserService currentUserService)
     {
         _repository = repository;
+        _currentUserService = currentUserService;
     }
 
     public async Task<object> Handle(GetCollectionListQuery request, CancellationToken cancellationToken)
     {
+        Guid? tenantId = Guid.TryParse(_currentUserService.TenantId, out var g) ? g : null;
+        var localeId = _currentUserService.LocaleId;
+
         var (items, totalCount) = await _repository.GetPagedAsync(
             request.Request.PageIndex,
             request.Request.PageSize,
-            request.Request.Search
+            tenantId,
+            request.Request.Search,
+            request.Request.Filters?.StatusId,
+            request.Request.Sort?.Field ?? "created_at",
+            request.Request.Sort?.Descending ?? true
         );
 
         var dtos = items.Select(c => new CollectionDto
@@ -34,8 +45,8 @@ public class GetCollectionListQueryHandler : IRequestHandler<GetCollectionListQu
             description_html = c.description_html,
             banner_url = c.banner_url,
             status_id = c.status_id,
-            status_code = c.status_code,
-            status_name = c.status_name,
+            status_code = c.status?.code,
+            status_name = c.status?.translations?.FirstOrDefault(t => t.locale_id == localeId)?.name ?? c.status?.code,
             sort_order = c.sort_order,
             created_at = c.created_at,
             updated_at = c.updated_at,

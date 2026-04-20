@@ -29,7 +29,13 @@ namespace ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.DTOs
         public int sort_order { get; set; }
     }
 
-    public class CollectionListRequestDto : BaseListRequestDto<object, object>
+    public class CollectionFilterDto
+    {
+        [System.Text.Json.Serialization.JsonPropertyName("status_id")]
+        public int? StatusId { get; set; }
+    }
+
+    public class CollectionListRequestDto : BaseListRequestDto<CollectionFilterDto, BaseSortDto>
     {
     }
 

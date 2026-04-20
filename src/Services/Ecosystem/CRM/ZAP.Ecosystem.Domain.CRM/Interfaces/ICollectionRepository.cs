@@ -8,7 +8,7 @@ namespace ZAP.Ecosystem.Domain.CRM
     public interface ICollectionRepository
     {
         Task<Collection?> GetByIdAsync(Guid id);
-        Task<(IEnumerable<Collection> Items, int TotalCount)> GetPagedAsync(int page, int pageSize, string? search = null);
+        Task<(IEnumerable<Collection> Items, int TotalCount)> GetPagedAsync(int page, int pageSize, Guid? tenantId = null, string? search = null, int? statusId = null, string sortField = "created_at", bool sortDescending = true);
         Task CreateAsync(Collection collection);
         Task UpdateAsync(Collection collection);
         Task DeleteAsync(Guid id);
