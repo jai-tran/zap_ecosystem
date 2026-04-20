@@ -1778,7 +1778,7 @@
                                                         ],
                                                         "body": {
                                                             "mode": "raw",
-                                                                                                                    "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}",
+                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}",
                                                             "options": {
                                                                 "raw": {
                                                                     "language": "json"
@@ -1942,7 +1942,7 @@
                                                         ],
                                                         "body": {
                                                             "mode": "raw",
-                                                                                                                    "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}",
+                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}",
                                                             "options": {
                                                                 "raw": {
                                                                     "language": "json"
@@ -2224,6 +2224,302 @@
                                                                 "v1",
                                                                 "catalog",
                                                                 "categories",
+                                                                ":id"
+                                                            ],
+                                                            "variable": [
+                                                                {
+                                                                    "key": "id",
+                                                                    "value": ""
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "collections",
+                                            "description": "",
+                                            "item": [
+                                                {
+                                                    "name": "list",
+                                                    "request": {
+                                                        "method": "POST",
+                                                        "header": [
+                                                            {
+                                                                "key": "Content-Type",
+                                                                "value": "application/json"
+                                                            }
+                                                        ],
+                                                        "body": {
+                                                            "mode": "raw",
+                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}"
+                                                        },
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/collections/list",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "collections",
+                                                                "list"
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "detail",
+                                                    "request": {
+                                                        "method": "GET",
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/collections/:id",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "collections",
+                                                                ":id"
+                                                            ],
+                                                            "variable": [
+                                                                {
+                                                                    "key": "id",
+                                                                    "value": ""
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "create",
+                                                    "request": {
+                                                        "method": "POST",
+                                                        "header": [
+                                                            {
+                                                                "key": "Content-Type",
+                                                                "value": "application/json"
+                                                            }
+                                                        ],
+                                                        "body": {
+                                                            "mode": "raw",
+                                                            "raw": "{\n  \"name\": \"New Category\",\n  \"slug\": \"new-category\",\n  \"is_active\": true\n}"
+                                                        },
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/collections",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "collections"
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "update",
+                                                    "request": {
+                                                        "method": "PUT",
+                                                        "header": [
+                                                            {
+                                                                "key": "Content-Type",
+                                                                "value": "application/json"
+                                                            }
+                                                        ],
+                                                        "body": {
+                                                            "mode": "raw",
+                                                            "raw": "{\n  \"id\": \"\",\n  \"name\": \"Updated Category\",\n  \"is_active\": true\n}"
+                                                        },
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/collections/:id",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "collections",
+                                                                ":id"
+                                                            ],
+                                                            "variable": [
+                                                                {
+                                                                    "key": "id",
+                                                                    "value": ""
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "delete",
+                                                    "request": {
+                                                        "method": "DELETE",
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/collections/:id",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "collections",
+                                                                ":id"
+                                                            ],
+                                                            "variable": [
+                                                                {
+                                                                    "key": "id",
+                                                                    "value": ""
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "locations",
+                                            "description": "",
+                                            "item": [
+                                                {
+                                                    "name": "list",
+                                                    "request": {
+                                                        "method": "POST",
+                                                        "header": [
+                                                            {
+                                                                "key": "Content-Type",
+                                                                "value": "application/json"
+                                                            }
+                                                        ],
+                                                        "body": {
+                                                            "mode": "raw",
+                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}"
+                                                        },
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/locations/list",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "locations",
+                                                                "list"
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "detail",
+                                                    "request": {
+                                                        "method": "GET",
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/locations/:id",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "locations",
+                                                                ":id"
+                                                            ],
+                                                            "variable": [
+                                                                {
+                                                                    "key": "id",
+                                                                    "value": ""
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "create",
+                                                    "request": {
+                                                        "method": "POST",
+                                                        "header": [
+                                                            {
+                                                                "key": "Content-Type",
+                                                                "value": "application/json"
+                                                            }
+                                                        ],
+                                                        "body": {
+                                                            "mode": "raw",
+                                                            "raw": "{\n  \"name\": \"New Category\",\n  \"slug\": \"new-category\",\n  \"is_active\": true\n}"
+                                                        },
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/locations",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "locations"
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "update",
+                                                    "request": {
+                                                        "method": "PUT",
+                                                        "header": [
+                                                            {
+                                                                "key": "Content-Type",
+                                                                "value": "application/json"
+                                                            }
+                                                        ],
+                                                        "body": {
+                                                            "mode": "raw",
+                                                            "raw": "{\n  \"id\": \"\",\n  \"name\": \"Updated Category\",\n  \"is_active\": true\n}"
+                                                        },
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/locations/:id",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "locations",
+                                                                ":id"
+                                                            ],
+                                                            "variable": [
+                                                                {
+                                                                    "key": "id",
+                                                                    "value": ""
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "delete",
+                                                    "request": {
+                                                        "method": "DELETE",
+                                                        "url": {
+                                                            "raw": "{{gateway}}/api/v1/catalog/locations/:id",
+                                                            "host": [
+                                                                "{{gateway}}"
+                                                            ],
+                                                            "path": [
+                                                                "api",
+                                                                "v1",
+                                                                "catalog",
+                                                                "locations",
                                                                 ":id"
                                                             ],
                                                             "variable": [
