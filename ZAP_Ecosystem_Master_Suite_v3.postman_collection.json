@@ -625,7 +625,7 @@
                                                                 "method": "POST",
                                                                 "body": {
                                                                     "mode": "raw",
-                                                                    "raw": "{\n  \"page_index\": \"823896\",\n  \"page_size\": 50,\n  \"search\": \"<string>\",\n  \"filters\": {\n    \"cate_id\": \"<null,string>\",\n    \"status\": \"-2496577829\",\n    \"location_id\": \"<null,string>\",\n    \"locale_id\": \"0\",\n    \"product_type_id\": \"-8\"\n  },\n  \"sort\": {\n    \"field\": \"<string>\",\n    \"descending\": \"<boolean>\"\n  }\n}",
+                                                                    "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {\n    \"cate_id\": null,\n    \"status\": 1,\n    \"location_id\": null,\n    \"locale_id\": null,\n    \"product_type_id\": null\n  },\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  }\n}",
                                                                     "options": {
                                                                         "raw": {
                                                                             "headerFamily": "json",
@@ -1047,7 +1047,7 @@
                                                                 "method": "POST",
                                                                 "body": {
                                                                     "mode": "raw",
-                                                                    "raw": "{\n  \"page_index\": \"-8280119\",\n  \"page_size\": 50,\n  \"filters\": {\n    \"group_id\": \"<null,string-uuid>\",\n    \"status_id\": \"7643\"\n  },\n  \"sort\": {\n    \"field\": \"<string>\",\n    \"descending\": \"<boolean>\"\n  }\n}",
+                                                                    "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"filters\": {\n    \"group_id\": null,\n    \"status_id\": 1\n  },\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  },\n  \"search\": \"\"\n}",
                                                                     "options": {
                                                                         "raw": {
                                                                             "headerFamily": "json",
@@ -1157,7 +1157,7 @@
                                                                 "method": "POST",
                                                                 "body": {
                                                                     "mode": "raw",
-                                                                    "raw": "<null>",
+                                                                    "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  },\n  \"filters\": {\n    \"status_id\": 1\n  }\n}",
                                                                     "options": {
                                                                         "raw": {
                                                                             "headerFamily": "json",
@@ -1267,7 +1267,7 @@
                                                                 "method": "POST",
                                                                 "body": {
                                                                     "mode": "raw",
-                                                                    "raw": "<null>",
+                                                                    "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  },\n  \"filters\": {\n    \"is_active\": true\n  }\n}",
                                                                     "options": {
                                                                         "raw": {
                                                                             "headerFamily": "json",
@@ -1689,7 +1689,7 @@
                                                                 "method": "POST",
                                                                 "body": {
                                                                     "mode": "raw",
-                                                                    "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}",
+                                                                    "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {\n    \"is_active\": true\n  },\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  }\n}",
                                                                     "options": {
                                                                         "raw": {
                                                                             "headerFamily": "json",
@@ -1778,7 +1778,7 @@
                                                         ],
                                                         "body": {
                                                             "mode": "raw",
-                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}",
+                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {\n    \"status_id\": 1\n  },\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  }\n}",
                                                             "options": {
                                                                 "raw": {
                                                                     "language": "json"
@@ -1942,7 +1942,7 @@
                                                         ],
                                                         "body": {
                                                             "mode": "raw",
-                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}",
+                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {\n    \"status_id\": 1\n  },\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  }\n}",
                                                             "options": {
                                                                 "raw": {
                                                                     "language": "json"
@@ -2105,7 +2105,7 @@
                                                         ],
                                                         "body": {
                                                             "mode": "raw",
-                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}"
+                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {\n    \"status_id\": 1\n  },\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  }\n}"
                                                         },
                                                         "url": {
                                                             "raw": "{{gateway}}/api/v1/catalog/categories/list",
@@ -2253,7 +2253,7 @@
                                                         ],
                                                         "body": {
                                                             "mode": "raw",
-                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}"
+                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  }\n}"
                                                         },
                                                         "url": {
                                                             "raw": "{{gateway}}/api/v1/catalog/collections/list",
@@ -2401,7 +2401,7 @@
                                                         ],
                                                         "body": {
                                                             "mode": "raw",
-                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {}\n}"
+                                                            "raw": "{\n  \"page_index\": 1,\n  \"page_size\": 50,\n  \"search\": \"\",\n  \"filters\": {},\n  \"sort\": {\n    \"field\": \"created_at\",\n    \"descending\": true\n  }\n}"
                                                         },
                                                         "url": {
                                                             "raw": "{{gateway}}/api/v1/catalog/locations/list",
@@ -2581,7 +2581,7 @@
                                                                         "method": "POST",
                                                                         "body": {
                                                                             "mode": "raw",
-                                                                            "raw": "{\n  \"schema_name\": \"system\",\n  \"page\": 1,\n  \"page_size\": 50,\n  \"keyword\": \"<null,string>\"\n}",
+                                                                            "raw": "{\n  \"schema_name\": \"system\",\n  \"page\": 1,\n  \"page_size\": 50,\n  \"keyword\": \"\"\n}",
                                                                             "options": {
                                                                                 "raw": {
                                                                                     "headerFamily": "json",
