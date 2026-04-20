@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.DTOs;
-using ZAP.Ecosystem.Application.CRM.Interfaces;
+using ZAP.Ecosystem.Shared.Interfaces;
 using ZAP.Ecosystem.Domain.CRM;
 
 namespace ZAP.Ecosystem.Application.CRM.Features.Catalog.Collections.v1.Queries;
@@ -50,7 +50,7 @@ public class GetCollectionListQueryHandler : IRequestHandler<GetCollectionListQu
             sort_order = c.sort_order,
             created_at = c.created_at,
             updated_at = c.updated_at,
-            items = c.items?.Select(i => new CollectionItemDto
+            items = c.items?.OrderBy(i => i.sort_order).Select(i => new CollectionItemDto
             {
                 product_id = i.product_id,
                 sort_order = i.sort_order
@@ -59,6 +59,8 @@ public class GetCollectionListQueryHandler : IRequestHandler<GetCollectionListQu
 
         return CrmResponse.Ok(new
         {
+            debug_status_id = request.Request.Filters?.StatusId,
+            debug_tenant_id = tenantId,
             page_index = request.Request.PageIndex,
             page_size = request.Request.PageSize,
             total_items = totalCount,

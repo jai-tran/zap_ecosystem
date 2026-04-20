@@ -16,6 +16,7 @@ namespace ZAP.Ecosystem.Domain.CRM
         [Column("sort_order")]
         public int sort_order { get; set; } = 0;
 
+        [ForeignKey("collection_id")]
         public Collection? collection { get; set; }
     }
 }
