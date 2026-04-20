@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace ZAP.Ecosystem.Application.CRM.Features.Products.v1.DTOs
@@ -30,7 +30,7 @@ namespace ZAP.Ecosystem.Application.CRM.Features.Products.v1.DTOs
         public string? legacy_id { get; set; }
         public int product_type_id { get; set; }
         public string? product_type_text { get; set; }
-        public string name { get; set; } = string.Empty;
+        public string? name { get; set; }
         public string? short_description { get; set; }
         public string? long_description_html { get; set; }
         public int? status_id { get; set; }
