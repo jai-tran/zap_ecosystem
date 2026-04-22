@@ -12,6 +12,9 @@ public class UomItemConfiguration : IEntityTypeConfiguration<UomItem>
         builder.ToTable("uom", "platform");
         builder.HasKey(x => x.id);
 
+        builder.Property(x => x.serial_id)
+               .ValueGeneratedOnAdd();
+
         builder.HasMany(x => x.translations)
                .WithOne()
                .HasForeignKey(t => t.uom_id);

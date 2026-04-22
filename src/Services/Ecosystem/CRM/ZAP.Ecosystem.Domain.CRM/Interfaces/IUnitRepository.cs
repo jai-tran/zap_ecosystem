@@ -16,6 +16,8 @@ namespace ZAP.Ecosystem.Domain.CRM
             string? search = null,
             int? statusId = null,
             int? precision = null,
+            int? id = null,
+            string? symbol = null,
             string sortField = "name",
             bool sortDescending = false);
         Task CreateAsync(UomItem uomItem);

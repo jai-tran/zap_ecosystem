@@ -25,6 +25,9 @@ public class UpdateUnitCommandHandler : IRequestHandler<UpdateUnitCommand, objec
         if (request.Code != null) unit.code = request.Code;
         if (request.Name != null) unit.name = request.Name;
         if (request.IsActive.HasValue) unit.is_active = request.IsActive.Value;
+        if (request.StatusId.HasValue) unit.status_id = request.StatusId.Value;
+        if (request.Precision.HasValue) unit.precision = request.Precision.Value;
+        if (request.Symbol != null) unit.abbreviation = request.Symbol;
         
         unit.updated_at = DateTime.UtcNow;
 

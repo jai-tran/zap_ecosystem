@@ -26,6 +26,8 @@ public class CreateUnitCommandHandler : IRequestHandler<CreateUnitCommand, objec
             name = request.Name ?? string.Empty,
             precision = request.Precision,
             is_active = request.IsActive,
+            status_id = request.StatusId,
+            abbreviation = request.Symbol,
             created_at = DateTime.UtcNow
         };
 

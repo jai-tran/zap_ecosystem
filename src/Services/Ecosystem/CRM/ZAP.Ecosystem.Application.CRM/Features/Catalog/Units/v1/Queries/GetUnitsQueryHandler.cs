@@ -30,6 +30,8 @@ public class GetUnitsQueryHandler : IRequestHandler<GetUnitsQuery, object>
             request.Request.Search,
             request.Request.Filters?.StatusId,
             request.Request.Filters?.Precision,
+            request.Request.Filters?.Id,
+            request.Request.Filters?.Symbol,
             request.Request.Sort?.Field ?? "name",
             request.Request.Sort?.Descending ?? false);
 

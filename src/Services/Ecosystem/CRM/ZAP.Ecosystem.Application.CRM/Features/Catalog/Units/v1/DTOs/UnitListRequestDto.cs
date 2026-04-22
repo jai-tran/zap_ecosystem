@@ -14,6 +14,12 @@ namespace ZAP.Ecosystem.Application.CRM.Features.Units.v1.DTOs
 
         [JsonPropertyName("precision")]
         public int? Precision { get; set; }
+
+        [JsonPropertyName("id")]
+        public int? Id { get; set; }
+
+        [JsonPropertyName("symbol")]
+        public string? Symbol { get; set; }
     }
 }
 

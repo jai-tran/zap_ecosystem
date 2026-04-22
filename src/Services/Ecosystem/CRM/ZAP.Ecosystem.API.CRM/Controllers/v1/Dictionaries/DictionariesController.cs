@@ -14,40 +14,78 @@ namespace ZAP.Ecosystem.API.CRM.Controllers.v1.Dictionaries;
 [Route("api/v1/system/dictionaries")]
 public class DictionariesController(EcosystemDbContext context) : ControllerBase
 {
-    public class EntityFilterDto : ZAP.Ecosystem.Shared.Data.FilterDTOs
+    public class DictionaryListRequestDto
     {
-        [System.Text.Json.Serialization.JsonPropertyName("schema_name")]
-        public string? SchemaName { get; set; }
+        public int page_index { get; set; } = 1;
+        public int page_size { get; set; } = 50;
+        public string? search { get; set; }
+        public DictionaryFiltersDto? filters { get; set; }
+        public DictionarySortDto? sort { get; set; }
+    }
+
+    public class DictionaryFiltersDto
+    {
+        public string? schema_name { get; set; }
+    }
+
+    public class DictionarySortDto
+    {
+        public string? field { get; set; }
+        public bool descending { get; set; }
     }
 
     [HttpPost("entities/list")]
-    public async Task<IActionResult> ListEntities([FromBody] EntityFilterDto filter)
+    public async Task<IActionResult> ListEntities([FromBody] DictionaryListRequestDto request)
     {
         var query = context.EntityDictionaries
             .Include(e => e.Fields)
             .AsQueryable();
 
-        if (!string.IsNullOrEmpty(filter.Keyword))
+        if (!string.IsNullOrEmpty(request.search))
         {
-            query = query.Where(e => e.TableName.Contains(filter.Keyword) || e.DisplayName.Contains(filter.Keyword));
+            var keyword = request.search.ToLower();
+            query = query.Where(e => e.TableName.ToLower().Contains(keyword) || e.DisplayName.ToLower().Contains(keyword));
         }
 
-        if (!string.IsNullOrEmpty(filter.SchemaName))
+        if (!string.IsNullOrEmpty(request.filters?.schema_name))
         {
-            query = query.Where(e => e.SchemaName == filter.SchemaName);
+            query = query.Where(e => e.SchemaName == request.filters.schema_name);
+        }
+
+        if (request.sort != null && !string.IsNullOrEmpty(request.sort.field))
+        {
+            var sortField = request.sort.field.ToLower();
+            if (sortField == "created_at")
+            {
+                query = request.sort.descending ? query.OrderByDescending(e => e.CreatedAt) : query.OrderBy(e => e.CreatedAt);
+            }
+            else
+            {
+                query = request.sort.descending ? query.OrderByDescending(e => e.TableName) : query.OrderBy(e => e.TableName);
+            }
+        }
+        else
+        {
+            query = query.OrderBy(e => e.SchemaName).ThenBy(e => e.TableName);
         }
 
         var totalItems = await query.CountAsync();
 
         var entities = await query
-            .OrderBy(e => e.SchemaName).ThenBy(e => e.TableName)
-            .Skip((filter.Page - 1) * filter.PageSize)
-            .Take(filter.PageSize)
+            .Skip((request.page_index - 1) * request.page_size)
+            .Take(request.page_size)
             .ToListAsync();
             
+        // Wrap inside standard pagination response if needed, 
+        // but to keep compatibility with existing response format we use "items" and "total_items"
+        // Wait, standard response should match CRM Response.
+        // But for now let's just return the expected structure.
         return Ok(ApiResponse<object>.Ok(new {
-            items = entities,
-            total_items = totalItems
+            total_page = (int)Math.Ceiling(totalItems / (double)request.page_size),
+            total_record = totalItems,
+            page_index = request.page_index,
+            page_size = request.page_size,
+            items = entities
         }));
     }
 

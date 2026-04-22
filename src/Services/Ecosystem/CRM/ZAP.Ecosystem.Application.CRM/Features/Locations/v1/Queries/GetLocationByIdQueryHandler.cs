@@ -23,7 +23,7 @@ public class GetLocationByIdQueryHandler : IRequestHandler<GetLocationByIdQuery,
         var tenantId = System.Guid.TryParse(_currentUserService.TenantId, out var tid) ? tid : (System.Guid?)null;
 
         var x = await _repository.GetByIdAsync(request.Id);
-        if (x == null || x.tenant_id != tenantId) return CrmResponse.NotFound("Location");
+        if (x == null || (tenantId.HasValue && x.tenant_id != tenantId.Value)) return CrmResponse.NotFound("Location");
 
         return CrmResponse.Ok(new LocationDto
         {

@@ -23,7 +23,7 @@ namespace ZAP.Ecosystem.Infrastructure.Data.Repositories.CRM
             return await _context.StatusItems.Include(x => x.translations).ToListAsync();
         }
         public async Task<(IEnumerable<UomItem> Items, int Total)> GetPagedAsync(
-            int page, int pageSize, Guid? tenantId = null, string? search = null, int? statusId = null, int? precision = null, string sortField = "name", bool sortDescending = false)
+            int page, int pageSize, Guid? tenantId = null, string? search = null, int? statusId = null, int? precision = null, int? id = null, string? symbol = null, string sortField = "name", bool sortDescending = false)
         {
             var q = _context.UomItems
                 .Include(x => x.translations)
@@ -37,7 +37,8 @@ namespace ZAP.Ecosystem.Infrastructure.Data.Repositories.CRM
                 q = q.Where(x => 
                     (x.name != null && x.name.ToLower().Contains(lowerSearch)) || 
                     (x.abbreviation != null && x.abbreviation.ToLower().Contains(lowerSearch)) ||
-                    (x.code != null && x.code.ToLower().Contains(lowerSearch))
+                    (x.code != null && x.code.ToLower().Contains(lowerSearch)) ||
+                    x.id.ToString() == lowerSearch
                 );
             }
 
@@ -49,6 +50,17 @@ namespace ZAP.Ecosystem.Infrastructure.Data.Repositories.CRM
             if (statusId.HasValue) 
             {
                 q = q.Where(x => x.status_id == statusId.Value);
+            }
+
+            if (id.HasValue)
+            {
+                q = q.Where(x => x.id == id.Value);
+            }
+
+            if (!string.IsNullOrEmpty(symbol))
+            {
+                var lowerSymbol = symbol.ToLower();
+                q = q.Where(x => x.abbreviation != null && x.abbreviation.ToLower().Contains(lowerSymbol));
             }
 
             var normalizedSortField = sortField?.ToLower() ?? "name";

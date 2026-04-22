@@ -10,6 +10,8 @@ namespace ZAP.Ecosystem.Application.CRM.Features.Units.v1.Commands
         public string? UomType { get; set; }
         public int Precision { get; set; }
         public bool IsActive { get; set; } = true;
+        public int? StatusId { get; set; }
+        public string? Symbol { get; set; }
     }
 }
 
